@@ -3,6 +3,8 @@
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">物件參考特性</h1><small>檔名：<code>object_reference.html</code></small>
   <div class="alert bg-light">因為關注點分離，畫面由框架來處理，開發者將專注於資料處理，因此資料處理的知識顯得格外重要。</div>
 </div>
+<span>淺層拷貝</span>
+<img src="../images/2023-12-21 17 49 55.png" alt="">
 <!-- 🔥🔥練習開始🔥🔥 -->
 <script>
 // #1 物件是以傳參考的形式賦值
@@ -34,13 +36,22 @@
 //   name: '小明',
 //   obj: {}
 // }
-
-
-// #3-2 深層拷貝
-// const person = {
-//   name: '小明',
-//   obj: {}
+// const person2 = Object.assign({},person);
+// const person3 = {
+//   ...person
 // }
+// console.log(person === person2,person === person3);//false,false
+// person2.obj.age = 16;
+// console.log(person);
+
+// #3-2 深層拷貝 物件轉為字串，字串轉為物件
+const person = {
+  name: '小明',
+  obj: {}
+}
+const person2 = JSON.parse(JSON.stringify(person));
+person2.obj.age = 15;
+console.log(person,person2);
 
 </script>
 <!-- 🙇🙇練習結束🙇🙇 -->
