@@ -36,3 +36,6 @@ function ageFilter(arr) {
 let filterResult = [];
 filterResult = ageFilterCB(ageFilter, crowdAge);
 console.log(filterResult); /* 為陣列，內容包含屬性 age > 18 的 crowdAge 元素 */
+array.forEach(element => {
+  
+});
